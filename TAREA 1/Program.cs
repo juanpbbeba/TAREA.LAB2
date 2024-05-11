@@ -1,110 +1,181 @@
 ﻿//ejercicio.1
 using System;
-using System.Numerics;
 
 class Program
 {
-    static void ImprimirPares(int n)
+    static void Main()
     {
-        if (n == 0)
-            return;
 
-        if (n % 2 == 0)
-            Console.WriteLine(n);
+        Console.WriteLine("Ingrese el primer número:");
+        double numero1 = Convert.ToDouble(Console.ReadLine());
 
-        ImprimirPares(n - 1);
+        Console.WriteLine("Ingrese el segundo número:");
+        double numero2 = Convert.ToDouble(Console.ReadLine());
+
+
+        Console.WriteLine($"La suma de {numero1} y {numero2} es: {numero1 + numero2}");
+
+
+        Console.WriteLine("Presione cualquier tecla para cerrar la ventana...");
+
+
+        Console.ReadKey();
     }
-
-    static void Main(string[] args)
-    {
-        ImprimirPares(100);
-    }
-
 }
 //ejercicio.2
 using System;
 
 class Program
 {
-    static int SumaHastaN(int n)
+    static void Main()
     {
-        if (n == 1)
-            return 1;
+        Console.WriteLine("Ingrese la base del triángulo:");
+        double baseTriangulo;
 
-        return n + SumaHastaN(n - 1);
-    }
 
-    static void Main(string[] args)
-    {
-        int resultado = SumaHastaN(5);
-        Console.WriteLine(resultado);
+        while (!double.TryParse(Console.ReadLine(), out baseTriangulo) || baseTriangulo <= 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para la base del triángulo:");
+        }
+
+
+        Console.WriteLine("Ingrese la altura del triángulo:");
+        double alturaTriangulo;
+
+
+        while (!double.TryParse(Console.ReadLine(), out alturaTriangulo) || alturaTriangulo <= 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para la altura del triángulo:");
+        }
+
+
+        double areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+
+
+        Console.WriteLine($"El área del triángulo con base {baseTriangulo} y altura {alturaTriangulo} es: {areaTriangulo}");
     }
+}
 //ejercicio 3 :
 using System;
 
 class Program
 {
-    static void ImprimirPiramide(int n)
+    static void Main()
     {
-        if (n == 0)
-            return;
 
-        ImprimirPiramide(n - 1);
+        Console.WriteLine("Ingrese la base del triángulo:");
+        double baseTriangulo;
 
-        for (int i = 1; i <= n; i++)
+
+        while (!double.TryParse(Console.ReadLine(), out baseTriangulo) || baseTriangulo <= 0)
         {
-            Console.Write(i + " ");
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para la base del triángulo:");
         }
-        Console.WriteLine();
-    }
 
-    static void Main(string[] args)
-    {
-        ImprimirPiramide(5);
+
+        Console.WriteLine("Ingrese la altura del triángulo:");
+        double alturaTriangulo;
+
+
+        while (!double.TryParse(Console.ReadLine(), out alturaTriangulo) || alturaTriangulo <= 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para la altura del triángulo:");
+        }
+        double areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+
+
+        Console.WriteLine($"El área del triángulo con base {baseTriangulo} y altura {alturaTriangulo} es: {areaTriangulo}");
     }
 }
-//ejercicio 4:  
+//ejercicio 4:
 using System;
 
 class Program
 {
-    static void ImprimirPiramideInvertida(int n)
+    static void Main()
     {
-        if (n == 0)
-            return;
+
+        Console.WriteLine("Ingrese un número para calcular su factorial:");
+        int numero;
+
+
+        while (!int.TryParse(Console.ReadLine(), out numero) || numero < 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero no negativo:");
+        }
+
+
+        long factorial = CalcularFactorial(numero);
+
+
+        Console.WriteLine($"El factorial de {numero} es: {factorial}");
+    }
+
+    static long CalcularFactorial(int n)
+    {
+
+        long factorial = 1;
+
 
         for (int i = 1; i <= n; i++)
         {
-            Console.Write(i + " ");
+            factorial *= i;
         }
-        Console.WriteLine();
 
-        ImprimirPiramideInvertida(n - 1);
-    }
-
-    static void Main(string[] args)
-    {
-        ImprimirPiramideInvertida(5);
+        return factorial;
     }
 }
-
 //ejercicio 5:
 using System;
 
 class Program
 {
-    static void TablaDeMultiplicar(int n, int i = 1)
+    static void Main()
     {
-        if (i > 10)
-            return;
+        Console.WriteLine("Ingrese un número para verificar si es primo:");
+        int numero;
 
-        Console.WriteLine($"{n} x {i} = {n * i}");
-        TablaDeMultiplicar(n, i + 1);
+
+        while (!int.TryParse(Console.ReadLine(), out numero) || numero < 2)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero mayor o igual a 2:");
+        }
+
+        bool esPrimo = VerificarPrimo(numero);
+
+
+        if (esPrimo)
+        {
+            Console.WriteLine($"El número {numero} es primo.");
+        }
+        else
+        {
+            Console.WriteLine($"El número {numero} no es primo.");
+        }
     }
 
-    static void Main(string[] args)
+    static bool VerificarPrimo(int n)
     {
-        TablaDeMultiplicar(5);
+        if (n == 2)
+        {
+            return true;
+        }
+
+        if (n % 2 == 0)
+        {
+            return false;
+        }
+
+        int limite = (int)Math.Sqrt(n);
+        for (int i = 3; i <= limite; i += 2)
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 //ejercicio 6:
@@ -114,96 +185,134 @@ class Program
 {
     static void Main()
     {
-        double[,] matrizNumerosReales = {
-            {1.5, 2.3, 3.7},
-            {4.2, 5.1, 6.9},
-            {7.4, 8.6, 9.0}
-        };
+        Console.WriteLine("Ingrese una cadena de texto:");
+        string texto = Console.ReadLine();
 
-        Console.WriteLine("Matriz de números reales:");
+        string textoInvertido = InvertirCadena(texto);
+        Console.WriteLine($"La cadena invertida es: {textoInvertido}");
+    }
 
-        for (int i = 0; i < matrizNumerosReales.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrizNumerosReales.GetLength(1); j++)
-            {
-                Console.Write(matrizNumerosReales[i, j] + "\t");
-            }
-            Console.WriteLine();
-        }
+    static string InvertirCadena(string cadena)
+    {
+
+        char[] caracteres = cadena.ToCharArray();
+
+
+        Array.Reverse(caracteres);
+
+
+        string cadenaInvertida = new string(caracteres);
+
+        return cadenaInvertida;
     }
 }
-
 //ejercicio 7:
 using System;
-using System.Numerics;
 
 class Program
 {
     static void Main()
     {
-        Complex[,] matrizNumerosComplejos = {
-            {new Complex(1.5, 2.0), new Complex(2.3, -1.0), new Complex(3.7, 0)},
-            {new Complex(4.2, 1.0), new Complex(5.1, 2.5), new Complex(6.9, -3.2)},
-            {new Complex(7.4, -2.1), new Complex(8.6, 0.7), new Complex(9.0, 1.8)}
-        };
 
-        Console.WriteLine("Matriz de números complejos:");
-        for (int i = 0; i < matrizNumerosComplejos.GetLength(0); i++)
+        Console.WriteLine("Ingrese el número inicial del rango:");
+        int inicio;
+        while (!int.TryParse(Console.ReadLine(), out inicio))
         {
-            for (int j = 0; j < matrizNumerosComplejos.GetLength(1); j++)
-            {
-                Console.Write(matrizNumerosComplejos[i, j] + "\t");
-            }
-            Console.WriteLine();
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero:");
         }
+
+        Console.WriteLine("Ingrese el número final del rango:");
+        int fin;
+        while (!int.TryParse(Console.ReadLine(), out fin) || fin < inicio)
+        {
+            Console.WriteLine($"Entrada no válida. Por favor, ingrese un número entero mayor o igual a {inicio}:");
+        }
+
+
+        int sumaPares = CalcularSumaPares(inicio, fin);
+
+
+        Console.WriteLine($"La suma de los números pares en el rango [{inicio}, {fin}] es: {sumaPares}");
+    }
+
+    static int CalcularSumaPares(int inicio, int fin)
+    {
+        int suma = 0;
+
+        for (int i = inicio; i <= fin; i++)
+        {
+            if (i % 2 == 0)
+            {
+                suma += i;
+            }
+        }
+        return suma;
     }
 }
-
 //ejercicio 8:
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        int[][][] matrizDeMatrices = new int[2][][];
-        matrizDeMatrices[0] = new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 } };
-        matrizDeMatrices[1] = new int[][] { new int[] { 7, 8 }, new int[] { 9, 10 }, new int[] { 11, 12 } };
 
-        Console.WriteLine("\nMatriz de matrices:");
-        for (int i = 0; i < matrizDeMatrices.Length; i++)
+        List<int> cuadrados = new List<int>();
+
+
+        for (int i = 1; i <= 10; i++)
         {
-            for (int j = 0; j < matrizDeMatrices[i].Length; j++)
-            {
-                for (int k = 0; k < matrizDeMatrices[i][j].Length; k++)
-                {
-                    Console.Write(matrizDeMatrices[i][j][k] + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
+            int cuadrado = i * i; // Calculamos el cuadrado de cada número
+            cuadrados.Add(cuadrado); // Agregamos el cuadrado a la lista
+        }
+
+
+        Console.WriteLine("Los cuadrados de los primeros 10 números naturales son:");
+        foreach (int numero in cuadrados)
+        {
+            Console.WriteLine(numero);
         }
     }
 }
 //ejercicio 9 :
-uusing System;
+using System;
 
 class Program
 {
     static void Main()
     {
-        double[,] matriz = {
-            {1.5, 2.3, 3.7},
-            {4.2, 5.1, 6.9},
-            {7.4, 8.6, 9.0}
-        };
-        int filaCentral = matriz.GetLength(0) / 2;
-        int columnaCentral = matriz.GetLength(1) / 2;
-        double elementoCentral = matriz[filaCentral, columnaCentral];
-        Console.WriteLine($"\nElemento central de la matriz: {elementoCentral}");
+        Console.WriteLine("Ingrese una cadena de texto:");
+        string texto = Console.ReadLine();
+
+
+        int contadorVocales = ContarVocales(texto);
+
+
+        Console.WriteLine($"El número de vocales en la cadena de texto es: {contadorVocales}");
+    }
+
+    static int ContarVocales(string cadena)
+    {
+
+        cadena = cadena.ToLower();
+
+
+        int contador = 0;
+
+
+        foreach (char caracter in cadena)
+        {
+
+            if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u')
+            {
+                contador++;
+            }
+        }
+
+        return contador;
     }
 }
-
 //ejercicio 10 :
 using System;
 
@@ -211,105 +320,65 @@ class Program
 {
     static void Main()
     {
-        double[,] matriz1 = {
-            {1.0, 2.0},
-            {3.0, 4.0}
-        };
 
-        double[,] matriz2 = {
-            {0.5, 0.5},
-            {0.5, 0.5},
-            {0.5, 0.5}
-        };
-
-        double[,] matrizResultado = SumarMatrices(matriz1, matriz2);
-
-        Console.WriteLine("\nMatriz resultado de la suma:");
-        MostrarMatriz(matrizResultado);
-    }
-    static double[,] SumarMatrices(double[,] matriz1, double[,] matriz2)
-    {
-        int filasResultado = Math.Max(matriz1.GetLength(0), matriz2.GetLength(0));
-        int columnasResultado = Math.Max(matriz1.GetLength(1), matriz2.GetLength(1));
-
-        double[,] matrizResultado = new double[filasResultado, columnasResultado];
-
-        for (int i = 0; i < filasResultado; i++)
+        Console.WriteLine("Los primeros 10 números de la serie Fibonacci son:");
+        for (int i = 0; i < 10; i++)
         {
-            for (int j = 0; j < columnasResultado; j++)
-            {
-                double valorMatriz1 = (i < matriz1.GetLength(0) && j < matriz1.GetLength(1)) ? matriz1[i, j] : 0;
-                double valorMatriz2 = (i < matriz2.GetLength(0) && j < matriz2.GetLength(1)) ? matriz2[i, j] : 0;
-                matrizResultado[i, j] = valorMatriz1 + valorMatriz2;
-            }
+            Console.Write(Fibonacci(i) + " ");
         }
-
-        return matrizResultado;
     }
-    static void MostrarMatriz(double[,] matriz)
+
+    static int Fibonacci(int n)
     {
-        for (int i = 0; i < matriz.GetLength(0); i++)
+        if (n <= 1)
         {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
+            return n;
+        }
+        else
+        {
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
     }
 }
 //ejercicio 11:
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        double[,] matriz = {
-            {1.0, 2.0, 3.0},
-            {4.0, 5.0, 6.0},
-            {7.0, 8.0, 9.0}
-        };
-        double escalar = 2.5;
+        Console.WriteLine("Ingrese los números separados por espacios:");
+        string entrada = Console.ReadLine();
 
-        Console.WriteLine("Matriz original:");
-        MostrarMatriz(matriz);
 
-        double[,] matrizMultiplicada = MultiplicarMatrizPorEscalar(matriz, escalar);
+        string[] numerosString = entrada.Split(' ');
 
-        Console.WriteLine("\nMatriz multiplicada por " + escalar + ":");
-        MostrarMatriz(matrizMultiplicada);
-    }
 
-    static double[,] MultiplicarMatrizPorEscalar(double[,] matriz, double escalar)
-    {
-        int filas = matriz.GetLength(0);
-        int columnas = matriz.GetLength(1);
-        double[,] matrizResultado = new double[filas, columnas];
-
-        for (int i = 0; i < filas; i++)
+        List<int> numeros = new List<int>();
+        foreach (string numeroString in numerosString)
         {
-            for (int j = 0; j < columnas; j++)
+            if (int.TryParse(numeroString, out int numero))
             {
-                matrizResultado[i, j] = matriz[i, j] * escalar;
+                numeros.Add(numero);
+            }
+            else
+            {
+                Console.WriteLine($"El valor '{numeroString}' no es un número entero válido y será ignorado.");
             }
         }
 
-        return matrizResultado;
-    }
-    static void MostrarMatriz(double[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
+
+        numeros.Sort();
+
+
+        Console.WriteLine("Números ordenados de menor a mayor:");
+        foreach (int numero in numeros)
         {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
+            Console.Write(numero + " ");
         }
     }
 }
-
 //ejercicio 12:
 using System;
 
@@ -317,148 +386,84 @@ class Program
 {
     static void Main()
     {
-        double[,] matriz = {
-            {1.0, 2.0, 3.0},
-            {4.0, 5.0, 6.0},
-            {7.0, 8.0, 9.0}
-        };
 
-        double media = CalcularMediaMatriz(matriz);
+        Console.WriteLine("Ingrese una palabra:");
+        string palabra = Console.ReadLine();
 
-        Console.WriteLine("La media de los elementos de la matriz es: " + media);
-    }
-    static double CalcularMediaMatriz(double[,] matriz)
-    {
-        int totalElementos = matriz.GetLength(0) * matriz.GetLength(1);
-        double sumaTotal = 0;
 
-        foreach (double elemento in matriz)
+        bool esPalindromo = VerificarPalindromo(palabra);
+
+
+        if (esPalindromo)
         {
-            sumaTotal += elemento;
+            Console.WriteLine($"La palabra '{palabra}' es un palíndromo.");
         }
+        else
+        {
+            Console.WriteLine($"La palabra '{palabra}' no es un palíndromo.");
+        }
+    }
 
-        return sumaTotal / totalElementos;
+    static bool VerificarPalindromo(string palabra)
+    {
+
+        palabra = palabra.ToLower();
+
+
+        for (int i = 0; i < palabra.Length / 2; i++)
+        {
+            if (palabra[i] != palabra[palabra.Length - 1 - i])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
-
-//ejercicio 13  MATRICESSS:
-uusing System;
+//ejercicio 13:
+using System;
 
 class Program
 {
     static void Main()
     {
-        double[,] matriz = GenerarMatrizAleatoria(100, 100);
 
-        MostrarMatriz(matriz);
-    }
-
-
-    static double[,] GenerarMatrizAleatoria(int filas, int columnas)
-    {
-        double[,] matriz = new double[filas, columnas];
-        Random random = new Random();
-
-        for (int i = 0; i < filas; i++)
+        Console.WriteLine("Ingrese un número para generar su tabla de multiplicar:");
+        int numero;
+        while (!int.TryParse(Console.ReadLine(), out numero))
         {
-            for (int j = 0; j < columnas; j++)
-            {
-                matriz[i, j] = random.NextDouble();
-            }
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero:");
         }
 
-        return matriz;
-    }
 
-    static void MostrarMatriz(double[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
+        Console.WriteLine($"Tabla de multiplicar del {numero}:");
+        for (int i = 1; i <= 10; i++)
         {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
+            int resultado = numero * i;
+            Console.WriteLine($"{numero} x {i} = {resultado}");
         }
     }
 }
-
 //ejercicio 14:
 using System;
-using System.Linq;
 
 class Program
 {
     static void Main()
     {
-        double[,] matriz = {
-            {1.0, 2.0, 3.0},
-            {4.0, 5.0, 6.0},
-            {7.0, 8.0, 9.0}
-        };
+        Console.WriteLine("Ingrese el radio del círculo:");
+        double radio;
 
-
-        double media = CalcularMedia(matriz);
-
-
-        double mediana = CalcularMediana(matriz);
-
-        double desviacionEstandar = CalcularDesviacionEstandar(matriz, media);
-
-        Console.WriteLine("Media: " + media);
-        Console.WriteLine("Mediana: " + mediana);
-        Console.WriteLine("Desviación estándar: " + desviacionEstandar);
-    }
-
-    static double CalcularMedia(double[,] matriz)
-    {
-        int filas = matriz.GetLength(0);
-        int columnas = matriz.GetLength(1);
-        double suma = 0;
-
-        for (int i = 0; i < filas; i++)
+        while (!double.TryParse(Console.ReadLine(), out radio) || radio <= 0)
         {
-            for (int j = 0; j < columnas; j++)
-            {
-                suma += matriz[i, j];
-            }
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para el radio del círculo:");
         }
 
-        return suma / (filas * columnas);
-    }
 
-    static double CalcularMediana(double[,] matriz)
-    {
-        int totalElementos = matriz.GetLength(0) * matriz.GetLength(1);
-        double[] elementos = new double[totalElementos];
-        int index = 0;
+        double area = Math.PI * Math.Pow(radio, 2);
 
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                elementos[index++] = matriz[i, j];
-            }
-        }
 
-        Array.Sort(elementos);
-        return totalElementos % 2 != 0 ? elementos[totalElementos / 2] : (elementos[totalElementos / 2] + elementos[totalElementos / 2 - 1]) / 2;
-    }
-    static double CalcularDesviacionEstandar(double[,] matriz, double media)
-    {
-        int filas = matriz.GetLength(0);
-        int columnas = matriz.GetLength(1);
-        double sumaCuadrados = 0;
-
-        for (int i = 0; i < filas; i++)
-        {
-            for (int j = 0; j < columnas; j++)
-            {
-                sumaCuadrados += Math.Pow(matriz[i, j] - media, 2);
-            }
-        }
-
-        return Math.Sqrt(sumaCuadrados / (filas * columnas));
+        Console.WriteLine($"El área del círculo con radio {radio} es: {area}");
     }
 }
 //ejercicio 15:
@@ -468,207 +473,29 @@ class Program
 {
     static void Main()
     {
-        double[,] matriz = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-        double maximo = EncontrarMaximo(matriz);
 
-        Console.WriteLine("El elemento máximo de la matriz es: " + maximo);
-    }
+        Console.WriteLine("Ingrese un número entero:");
+        int numero;
 
-    static double EncontrarMaximo(double[,] matriz)
-    {
-        double maximo = matriz[0, 0];
-
-        for (int i = 0; i < matriz.GetLength(0); i++)
+        while (!int.TryParse(Console.ReadLine(), out numero))
         {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                if (matriz[i, j] > maximo)
-                {
-                    maximo = matriz[i, j];
-                }
-            }
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero:");
         }
 
-        return maximo;
-    }
-}
-//ejercicio 16:
-using System;
+        int sumaDigitos = CalcularSumaDigitos(numero);
 
-class Program
-{
-    static void Main()
-    {
-
-        int[,] matriz = {
-            {1, 2, -1, 4},
-            {-4, -5, 6, 7},
-            {8, 9, -2, -3},
-            {2, -1, 3, 2}
-        };
-
-        int[,] submatrizMaxima = EncontrarSubmatrizMaxima(matriz);
-
-        Console.WriteLine("La submatriz de mayor suma es:");
-        MostrarMatriz(submatrizMaxima);
+        Console.WriteLine($"La suma de los dígitos de {numero} es: {sumaDigitos}");
     }
 
-    static int[,] EncontrarSubmatrizMaxima(int[,] matriz)
-    {
-        int filas = matriz.GetLength(0);
-        int columnas = matriz.GetLength(1);
-
-        int maxSuma = int.MinValue;
-        int filaInicio = 0;
-        int filaFin = 0;
-        int columnaInicio = 0;
-        int columnaFin = 0;
-
-        for (int i = 0; i < filas; i++)
-        {
-            for (int j = 0; j < columnas; j++)
-            {
-                for (int k = i; k < filas; k++)
-                {
-                    for (int l = j; l < columnas; l++)
-                    {
-                        int sumaActual = CalcularSumaSubmatriz(matriz, i, j, k, l);
-                        if (sumaActual > maxSuma)
-                        {
-                            maxSuma = sumaActual;
-                            filaInicio = i;
-                            filaFin = k;
-                            columnaInicio = j;
-                            columnaFin = l;
-                        }
-                    }
-                }
-            }
-        }
-
-
-        int[,] submatrizMaxima = new int[filaFin - filaInicio + 1, columnaFin - columnaInicio + 1];
-        for (int i = filaInicio; i <= filaFin; i++)
-        {
-            for (int j = columnaInicio; j <= columnaFin; j++)
-            {
-                submatrizMaxima[i - filaInicio, j - columnaInicio] = matriz[i, j];
-            }
-        }
-
-        return submatrizMaxima;
-    }
-
-    static int CalcularSumaSubmatriz(int[,] matriz, int filaInicio, int columnaInicio, int filaFin, int columnaFin)
+    static int CalcularSumaDigitos(int n)
     {
         int suma = 0;
-        for (int i = filaInicio; i <= filaFin; i++)
+
+        while (n != 0)
         {
-            for (int j = columnaInicio; j <= columnaFin; j++)
-            {
-                suma += matriz[i, j];
-            }
+            suma += n % 10;
+            n /= 10;
         }
         return suma;
-    }
-
-
-    static void MostrarMatriz(int[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
-        }
-    }
-}
-//ejercicio 17:
-using System;
-
-class Program
-{
-    static void Main()
-    {
-
-        double[,] matriz1 = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-
-        double[,] matriz2 = {
-            {9, 8, 7},
-            {6, 5, 4},
-            {3, 2, 1}
-        };
-
-        double[,] matrizCovarianza = CalcularMatrizCovarianza(matriz1, matriz2);
-
-        Console.WriteLine("La matriz de covarianza es:");
-        MostrarMatriz(matrizCovarianza);
-    }
-
-    static double[,] CalcularMatrizCovarianza(double[,] matriz1, double[,] matriz2)
-    {
-        int filas = matriz1.GetLength(0);
-        int columnas = matriz1.GetLength(1);
-        double[,] matrizCovarianza = new double[columnas, columnas];
-
-        double[] mediaMatriz1 = CalcularMediaColumnas(matriz1);
-        double[] mediaMatriz2 = CalcularMediaColumnas(matriz2);
-
-        for (int i = 0; i < columnas; i++)
-        {
-            for (int j = 0; j < columnas; j++)
-            {
-                double covarianza = 0;
-                for (int k = 0; k < filas; k++)
-                {
-                    covarianza += (matriz1[k, i] - mediaMatriz1[i]) * (matriz2[k, j] - mediaMatriz2[j]);
-                }
-                matrizCovarianza[i, j] = covarianza / filas;
-            }
-        }
-
-        return matrizCovarianza;
-    }
-
-
-    static double[] CalcularMediaColumnas(double[,] matriz)
-    {
-        int filas = matriz.GetLength(0);
-        int columnas = matriz.GetLength(1);
-        double[] media = new double[columnas];
-
-        for (int j = 0; j < columnas; j++)
-        {
-            double sumaColumna = 0;
-            for (int i = 0; i < filas; i++)
-            {
-                sumaColumna += matriz[i, j];
-            }
-            media[j] = sumaColumna / filas;
-        }
-
-        return media;
-    }
-
-    static void MostrarMatriz(double[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
-        }
     }
 }
