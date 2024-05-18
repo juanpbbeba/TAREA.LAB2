@@ -1,0 +1,16 @@
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\bin\Debug\net8.0-windows\WinFormstrabajo2.exe
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\bin\Debug\net8.0-windows\WinFormstrabajo2.deps.json
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\bin\Debug\net8.0-windows\WinFormstrabajo2.runtimeconfig.json
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\bin\Debug\net8.0-windows\WinFormstrabajo2.dll
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\bin\Debug\net8.0-windows\WinFormstrabajo2.pdb
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.Form1.resources
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.AssemblyInfo.cs
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.dll
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\refint\WinFormstrabajo2.dll
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.pdb
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\WinFormstrabajo2.genruntimeconfig.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\WinFormstrabajo2\WinFormstrabajo2\obj\Debug\net8.0-windows\ref\WinFormstrabajo2.dll
