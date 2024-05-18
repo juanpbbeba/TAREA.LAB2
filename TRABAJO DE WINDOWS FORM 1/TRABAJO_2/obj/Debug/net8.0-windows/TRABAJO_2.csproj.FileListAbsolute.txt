@@ -1,0 +1,16 @@
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\bin\Debug\net8.0-windows\TRABAJO_2.exe
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\bin\Debug\net8.0-windows\TRABAJO_2.deps.json
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\bin\Debug\net8.0-windows\TRABAJO_2.runtimeconfig.json
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\bin\Debug\net8.0-windows\TRABAJO_2.dll
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\bin\Debug\net8.0-windows\TRABAJO_2.pdb
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.Form1.resources
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.AssemblyInfo.cs
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.dll
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\refint\TRABAJO_2.dll
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.pdb
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\TRABAJO_2.genruntimeconfig.cache
+C:\Users\USER\Desktop\pruebaa\TAREASGITHUB\TRABAJO_2\TRABAJO_2\obj\Debug\net8.0-windows\ref\TRABAJO_2.dll
